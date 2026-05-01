@@ -1,7 +1,7 @@
 create table accounts (
     id uuid primary key,
     name varchar(120) not null,
-    created_at timestamptz not null
+    created_at timestamp(6) not null
 );
 
 create table ledger_transactions (
@@ -11,7 +11,7 @@ create table ledger_transactions (
     currency varchar(3) not null,
     paid_by_account_id uuid not null references accounts(id),
     transaction_date date not null,
-    created_at timestamptz not null
+    created_at timestamp(6) not null
 );
 
 create table transaction_participants (
